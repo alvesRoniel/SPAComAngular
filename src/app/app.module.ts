@@ -10,6 +10,8 @@ import { FooterComponent } from './navegacao/footer/footer.component';
 import { SobreComponent } from './institucional/sobre/sobre.component';
 import { ContatoComponent } from './institucional/contato/contato.component';
 import { rootRouterConfig } from './app.routes';
+import { ProdutoService } from './produtos/produtos.service';
+import { ListarProdutosComponent } from './produtos/listar-produtos/listar-produtos.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { rootRouterConfig } from './app.routes';
     HomeComponent,
     FooterComponent,
     SobreComponent,
-    ContatoComponent
+    ContatoComponent,
+    ListarProdutosComponent
   ],
   imports: [
     BrowserModule,
     [RouterModule.forRoot(rootRouterConfig, {useHash: false})]
   ],
   providers: [
+    ProdutoService,
     { provide: APP_BASE_HREF, useValue: '/'}
   ],
   bootstrap: [AppComponent]
