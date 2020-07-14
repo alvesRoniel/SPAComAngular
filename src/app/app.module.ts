@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF }  from '@angular/common';
+import { FormsModule }   from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './navegacao/menu/menu.component';
@@ -24,7 +26,9 @@ import { ListarProdutosComponent } from './produtos/listar-produtos/listar-produ
     ListarProdutosComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
+    FormsModule,
+    HttpClientModule,
     [RouterModule.forRoot(rootRouterConfig, {useHash: false})]
   ],
   providers: [
